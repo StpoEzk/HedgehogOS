@@ -4,4 +4,12 @@
 
 <hr/>
 
-HedgehogOS is a simple Open Source Operating System, developed with the goal of understanding the operating system design at a low level.
+__HedgehogOS__ is a Simple Open Source Operating System under the GPL license, written in C and assembly language(NASM). The purpose of the development is to understand the operating system device at a low level.
+
+<hr/>
+
+### Currently implemented:
+1. Launch in long(64bit) mode
+2. Simple cli shell working through VGA text mode
+3. The beginning for realization of PAE paging support
+4. Small part of libc implementation
