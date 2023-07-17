@@ -25,4 +25,4 @@ __HedgehogOS__ is a Simple Open Source __Operating System__ under the __GPL__ li
 ## Other
 If you want to start the project, you will need create a bootable device and use it on a 64-bit computer, or load iso in qemu64 _(you can use script)_.
 
-If you want to build the project or, god forbid, work with it, you will need a cross-compiler, which you can either build yourself _(https://wiki.osdev.org/GCC_Cross_Compiler)_ or take an already built one _(https://mirrors.edge.kernel.org/pub/tools/crosstool/)_.
+If you want to build the project or, god forbid, work with it, you will need a cross-compiler, which you can either build yourself _(https://wiki.osdev.org/GCC_Cross_Compiler)_ or take an already built one _(https://mirrors.edge.kernel.org/pub/tools/crosstool/)_, and run command make.
