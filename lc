@@ -1,0 +1,7 @@
+./headers
+
+cd build_x86_64/
+export C_FILES=$(find ../libc/ -type f -name '*.c')
+../../compilers/cross_gcc64/bin/x86_64-elf-gcc -g -c $C_FILES -std=gnu99 -ffreestanding -O2 -Wall -Wextra -mcmodel=large -mno-red-zone --sysroot="$(pwd)/sysroot" -isystem="/usr/include"
+cd ..
+

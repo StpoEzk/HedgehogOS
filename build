@@ -1,0 +1,16 @@
+cp -r kernel/include/* build_x86_64/sysroot/usr/include/kernel/
+#cp -r libc/include/* build_x86_64/sysroot/usr/include/
+
+
+nasm -felf64 -o build_x86_64/boot.o kernel/arch/x86/boot.asm
+nasm -felf64 -o build_x86_64/checks.o kernel/arch/x86/checks.asm
+nasm -felf64 -o build_x86_64/init_long_mode.o kernel/arch/x86/init_long_mode.asm
+
+cd build_x86_64
+export C_FILES=$(find ../kernel/ -type f -name '*.c')
+../../compilers/cross_gcc64/bin/x86_64-elf-gcc -g -c $C_FILES -std=gnu99 -ffreestanding -O2 -Wall -Wextra -mcmodel=large -mno-red-zone --sysroot="$(pwd)/sysroot" -isystem="/usr/include"
+cd ..
+echo 1
+../compilers/cross_gcc64/bin/x86_64-elf-gcc -n -T kernel/arch/x86/linker.ld -o build_x86_64/iso/k.bin build_x86_64/*.o -nostdlib -lgcc
+
+grub-mkrescue -o build_x86_64/hgh.iso build_x86_64/iso

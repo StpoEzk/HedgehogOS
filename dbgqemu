@@ -1,0 +1,1 @@
+qemu-system-x86_64 -d int -no-shutdown -no-reboot -smp 2 -cdrom build_x86_64/hgh.iso -vga cirrus -display vnc=0.0.0.0:5
